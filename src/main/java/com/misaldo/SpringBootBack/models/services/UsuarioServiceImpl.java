@@ -16,9 +16,27 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	private IUsuarioDao usuarioDao;
 
 	@Override
-	@Transactional(readOnly = true )//Transactional es opcional
+	@Transactional(readOnly = true) // Transactional es opcional
 	public List<Usuario> findAll() {
 		return (List<Usuario>) usuarioDao.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Usuario findById(String correo) {
+		return usuarioDao.findById(correo).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Usuario save(Usuario usuario) {
+		return usuarioDao.save(usuario);
+	}
+
+	@Override
+	@Transactional
+	public void delete(String correo) {
+		usuarioDao.deleteById(correo);
 	}
 
 }
