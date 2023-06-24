@@ -35,6 +35,9 @@ public class Saldo implements Serializable {
 		this.concepto = concepto;
 		this.usuarioCorreo = usuarioCorreo;
 	}
+	public Saldo() {
+		
+	}
 
 	public Long getIdSaldo() {
 		return idSaldo;
