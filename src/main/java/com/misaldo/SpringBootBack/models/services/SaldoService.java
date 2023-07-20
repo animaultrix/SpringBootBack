@@ -39,4 +39,9 @@ public class SaldoService implements ISaldoService {
 		saldoDao.deleteById(id);
 	}
 
+	@Override
+    @Transactional(readOnly = true)
+    public List<Saldo> findByUsuarioCorreo(String usuarioCorreo) {
+        return saldoDao.findByUsuarioCorreo(usuarioCorreo);
+    }
 }

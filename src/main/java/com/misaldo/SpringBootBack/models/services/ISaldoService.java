@@ -13,4 +13,6 @@ public interface ISaldoService {
 	public Saldo save(Saldo saldo);
 
 	public void delete(Long id);
+	
+	public List<Saldo> findByUsuarioCorreo(String usuarioCorreo);
 }

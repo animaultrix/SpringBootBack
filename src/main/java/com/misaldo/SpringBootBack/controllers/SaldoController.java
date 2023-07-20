@@ -42,6 +42,11 @@ public class SaldoController implements Serializable {
 	public Saldo getSaldo(@PathVariable Long id) {
 		return saldoService.findById(id);
 	}
+	
+	@GetMapping("/saldos/usuario/{usuarioCorreo}")
+    public List<Saldo> getSaldosByUsuarioCorreo(@PathVariable String usuarioCorreo) {
+        return saldoService.findByUsuarioCorreo(usuarioCorreo);
+    }
 
 	@PostMapping("/saldo")
 	@ResponseStatus(HttpStatus.CREATED)
